@@ -1,0 +1,8 @@
+uploads/
+node_modules/
+vendor/
+*.zip
+*.rar
+*.sql
+*.log
+.env

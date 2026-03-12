@@ -1,0 +1,28 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Disable TRACE and OPTIONS
+RewriteCond %{REQUEST_METHOD} ^(TRACE|OPTIONS)
+RewriteRule .* - [F]
+
+# Allow only GET and POST
+<LimitExcept GET POST>
+Require all denied
+</LimitExcept>
+
+ServerSignature Off
+
+# Protect sensitive files
+<FilesMatch "\.(env|log|ini|sql|conf|bak|config)$">
+Require all denied
+</FilesMatch>
+
+# Protect .htaccess
+<Files .htaccess>
+Require all denied
+</Files>
+
+<IfModule mod_headers.c>
+Header always set Content-Security-Policy "frame-ancestors 'self';"
+</IfModule>

@@ -1,0 +1,23 @@
+Options -Indexes
+
+
+
+# Hide Server Information
+ServerSignature Off
+
+<IfModule mod_headers.c>
+
+Header unset X-Powered-By
+Header always unset Server
+
+# Security Headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set Referrer-Policy "no-referrer"
+Header set X-XSS-Protection "1; mode=block"
+
+</IfModule>
+
+# Custom Error Pages
+ErrorDocument 404 /NCDC_MOHFW/404.php
+ErrorDocument 403 /NCDC_MOHFW/404.php
