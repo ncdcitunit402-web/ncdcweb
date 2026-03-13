@@ -10,6 +10,7 @@
   padding: 25px 15px;
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
+  margin-top: auto;   
 }
 
 .ncdc-footer a {
@@ -135,8 +136,4 @@ $latestModifiedTime = getLatestModifiedTime($folderPath);
 
     <p class="footer-code">508112</p>
 </div>
-
-
-
-
 </footer>

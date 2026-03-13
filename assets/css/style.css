@@ -286,7 +286,7 @@
 .main-nav a {
   color: #fff;
   font-size: 16px;      /* size decreased */
-  font-weight: 400px;     /* not bold */
+  font-weight: 400;     /* not bold */
   text-decoration: none;
   padding: 8px 12px;    /* compact button spacing */
   transition: 0.3s ease;
@@ -510,3 +510,18 @@ body{
   }
 }
 
+html, body{
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+body{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+.main-content{
+  flex:1;
+}

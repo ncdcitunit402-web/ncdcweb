@@ -2,12 +2,7 @@
 <?php
 include_once __DIR__ . '/security_headers.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>NCDC | MoHFW</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <link rel="stylesheet" href="/NCDC_MOHFW/assets/css/style.css">
@@ -91,7 +86,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 0;
+  padding: 14px;
   background: #fff;
   
 }
@@ -128,7 +123,7 @@ body {
 /* DROPDOWN */
 .nav-item .dropdown {
   position: absolute;
-  top: 48px;
+  top: 100%;
   left: 0;
   min-width: 280px;
   background: #fff;
@@ -176,7 +171,7 @@ body {
 .main-nav a {
   color: #fff;
   font-size: 16px;      /* size decreased */
-  font-weight: 400px;     /* not bold */
+  font-weight: 400;     /* not bold */
   text-decoration: none;
   padding: 8px 12px;    /* compact button spacing */
   transition: 0.3s ease;
@@ -191,6 +186,8 @@ body {
 .nav-item {
   position: relative;
   cursor: pointer;
+  font-weight: 600;
+  font-family: "Times New Roman", Times, serif;
 }
 
 
@@ -733,7 +730,12 @@ function skipToContent(e){
   }
 
 </script>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NCDC | MOHFW</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- ================= TOP UTILITY ================= -->
 <div class="top-utility">
   <div class="top-inner">
@@ -841,10 +843,10 @@ function skipToContent(e){
 <!-- ================= NAV BAR ================= -->
 <nav class="main-nav" id="mainNav">
   <div class="hamburger" onClick="openMenu()">☰</div>
-  <a href="/NCDC_MOHFW/index.php">Home</a>
+  <a href="/NCDC_MOHFW/index.php" class="nav-item">Home</a>
   <!-- ABOUT US -->
   <div class="nav-item" onclick="toggleDropdown(event)">
-    <a href="javascript:void(0);">About Us ▾</a>
+    <a href="javascript:void(0);" class="nav-item">About Us ▾</a>
 
     <div class="dropdown">
       <a href="/NCDC_MOHFW/includes/About/aboutus.php?tab=whoswho">Who’s Who</a>
@@ -861,7 +863,7 @@ function skipToContent(e){
   </div>
   <!-- Branches -->
   <div class="nav-item" onclick="toggleDropdown(event)">
-    <a href="#">Branches ▾</a>
+    <a href="#" class="nav-item">Branches ▾</a>
 
     <div class="dropdown">
   <a href="/NCDC_MOHFW/includes/Branches/upcoming_branches.php">
@@ -888,7 +890,7 @@ function skipToContent(e){
 
   <!-- Health Information -->
   <div class="nav-item" onclick="toggleDropdown(event)">
-    <a href="javascript:void(0)">Health Information ▾</a>
+    <a href="javascript:void(0)" class="nav-item">Health Information ▾</a>
 
     <div class="dropdown">
       <a href="/NCDC_MOHFW/includes/Health_Information/healthcare.php">Health Care Professional and ParaProfessional</a>
@@ -899,7 +901,7 @@ function skipToContent(e){
   
   <!-- Resource Library -->
 <div class="nav-item" onclick="toggleDropdown(event)">
-  <a href="javascript:void(0)">Resource Library ▾</a>
+  <a href="javascript:void(0)" class="nav-item">Resource Library ▾</a>
 
   <div class="dropdown">
     <a href="/NCDC_MOHFW/includes/Resource_Library/index.php?tab=Technical%20Guidelines">
@@ -923,7 +925,7 @@ function skipToContent(e){
 
    <!-- Work With Us -->
   <div class="nav-item" onclick="toggleDropdown(event)">
-    <a href="javascript:void(0)">Work With Us ▾</a>
+    <a href="javascript:void(0)" class="nav-item">Work With Us ▾</a>
 
     <div class="dropdown">
       <a href="/NCDC_MOHFW/includes/Work_With_Us/Vacancies.php">Vacancies</a>
@@ -936,15 +938,15 @@ function skipToContent(e){
   
   <!-- Academics -->
   <div class="nav-item" onclick="toggleDropdown(event)">
-    <a href="javascript:void(0)">Academics ▾</a>
+    <a href="javascript:void(0)" class="nav-item">Academics ▾</a>
 
     <div class="dropdown">
       <a href="/NCDC_MOHFW/includes/Academics/teaching-training.php">Teaching & Training</a>
       <a href="/NCDC_MOHFW/includes/Academics/ongoing-thesis.php">Ongoing thesis</a>
     </div>
   </div>
-  <a href="/NCDC_MOHFW/includes/Tenders/index.php">Tenders</a>
-  <a href="/NCDC_MOHFW/includes/SideBar/contactus.php">Contact Us</a>
+  <a href="/NCDC_MOHFW/includes/Tenders/index.php" class="nav-item">Tenders</a>
+  <a href="/NCDC_MOHFW/includes/SideBar/contactus.php" class="nav-item">Contact Us</a>
   
 </nav>
 
@@ -1077,3 +1079,5 @@ function skipToContent(e){
 
 </div> 
 
+</body>
+</html>
