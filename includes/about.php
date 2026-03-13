@@ -22,19 +22,19 @@ The function of the institute also included various areas of training and resear
 
     <!-- DIRECTOR DESK -->
     <div class="director-box">
-      <h3>From the Director’s Desk</h3>
+      <h3 style="text-align: justify; line-height: 1.0; color: #333; font-family: Times New Roman, Times, serif;">From the Director’s Desk</h3>
 
       <div class="director-profile">
         <img src="assets/images/director.jpg" alt="Director">
         <div class="director-info">
-          <strong>Prof. (Dr.) RANJAN DAS</strong>
-          <p>MBBS, MD, PGCHM, PGCHFWM, CCFE, FIPHA</p>
+          <strong style="text-align: justify; line-height: 1.0; color: #333; font-family: Times New Roman, Times, serif;">Prof. (Dr.) RANJAN DAS</strong>
+          <p style="text-align: justify; line-height: 1.0; color: #333; font-family: Times New Roman, Times, serif;">MBBS, MD, PGCHM, PGCHFWM, CCFE, FIPHA</p>
         </div>
       </div>
 
-      <p class="greeting">Namaskar !</p>
+      <p class="greeting" style="text-align: justify; line-height: 1.0; color: #333; font-family: Times New Roman, Times, serif;">Namaskar !</p>
 
-      <p style="text-align: justify; line-height: 1.8; color: #333;">
+      <p style="text-align: justify; line-height: 1.0; color: #333; font-family: Times New Roman, Times, serif;">
         <BR> I consider it an honour and a great responsibility to be in charge
          of the historic and prestigious National Centre for Disease Control (NCDC) India, 
          as its 26 th Director. Six months have elapsed since charge was assumed, and it is time to re-look at the spectrum of national and international public health work
@@ -53,8 +53,9 @@ The function of the institute also included various areas of training and resear
    ABOUT + DIRECTOR SECTION
 ========================= */
 .about-director-section {
-  padding: 60px 0;
+  padding: 60px;
   background: #fff;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .container {
@@ -62,7 +63,7 @@ The function of the institute also included various areas of training and resear
   margin: auto;
   padding: 0 20px;
   display: flex;
-  gap: 30px;
+  gap: 90px;
 }
 
 /* LEFT */
@@ -82,7 +83,7 @@ The function of the institute also included various areas of training and resear
   color: #333;
   text-align: justify;
   font-family: "Times New Roman", Times, serif;
-  font-size: 19px;
+  font-size: 18px;
   
 }
 
@@ -90,9 +91,10 @@ The function of the institute also included various areas of training and resear
 .director-box {
   flex: 1;
   background: #eef4ff;
-  padding: 25px;
+  padding: 12px 15px;
   border-radius: 6px;
   font-family: "Times New Roman", Times, serif;
+  line-height: 1.4;
 }
 
 .director-box h3 {
@@ -107,10 +109,9 @@ The function of the institute also included various areas of training and resear
 .director-profile img {
   width: 160px;
   height: auto;
-  border-radius: 6px;
+  
   display: block;
   margin: 0 auto 12px;          /* centers image */
-  border: 2px solid #000;
 }
 
 .director-info strong {

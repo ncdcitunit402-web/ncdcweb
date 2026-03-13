@@ -38,7 +38,7 @@
 <style>
 .hero-slider {
   width: 100%;
-  height: 420px;
+  height: 550px;
   position: relative;
   overflow: hidden;
   background: #000;

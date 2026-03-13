@@ -188,6 +188,7 @@ body {
   cursor: pointer;
   font-weight: 600;
   font-family: "Times New Roman", Times, serif;
+  font-size: 180px;
 }
 
 
@@ -843,10 +844,10 @@ function skipToContent(e){
 <!-- ================= NAV BAR ================= -->
 <nav class="main-nav" id="mainNav">
   <div class="hamburger" onClick="openMenu()">☰</div>
-  <a href="/NCDC_MOHFW/index.php" class="nav-item">Home</a>
+  <a href="/NCDC_MOHFW/index.php" class="nav-item" style="font-size:20px;">Home</a>
   <!-- ABOUT US -->
   <div class="nav-item" onclick="toggleDropdown(event)">
-    <a href="javascript:void(0);" class="nav-item">About Us ▾</a>
+    <a href="javascript:void(0);" class="nav-item" style="font-size:20px;">About Us ▾</a>
 
     <div class="dropdown">
       <a href="/NCDC_MOHFW/includes/About/aboutus.php?tab=whoswho">Who’s Who</a>
@@ -863,7 +864,7 @@ function skipToContent(e){
   </div>
   <!-- Branches -->
   <div class="nav-item" onclick="toggleDropdown(event)">
-    <a href="#" class="nav-item">Branches ▾</a>
+    <a href="#" class="nav-item" style="font-size:20px;">Branches ▾</a>
 
     <div class="dropdown">
   <a href="/NCDC_MOHFW/includes/Branches/upcoming_branches.php">
@@ -890,7 +891,7 @@ function skipToContent(e){
 
   <!-- Health Information -->
   <div class="nav-item" onclick="toggleDropdown(event)">
-    <a href="javascript:void(0)" class="nav-item">Health Information ▾</a>
+    <a href="javascript:void(0)" class="nav-item" style="font-size:20px;">Health Information ▾</a>
 
     <div class="dropdown">
       <a href="/NCDC_MOHFW/includes/Health_Information/healthcare.php">Health Care Professional and ParaProfessional</a>
@@ -901,7 +902,7 @@ function skipToContent(e){
   
   <!-- Resource Library -->
 <div class="nav-item" onclick="toggleDropdown(event)">
-  <a href="javascript:void(0)" class="nav-item">Resource Library ▾</a>
+  <a href="javascript:void(0)" class="nav-item" style="font-size:20px;">Resource Library ▾</a>
 
   <div class="dropdown">
     <a href="/NCDC_MOHFW/includes/Resource_Library/index.php?tab=Technical%20Guidelines">
@@ -925,7 +926,7 @@ function skipToContent(e){
 
    <!-- Work With Us -->
   <div class="nav-item" onclick="toggleDropdown(event)">
-    <a href="javascript:void(0)" class="nav-item">Work With Us ▾</a>
+    <a href="javascript:void(0)" class="nav-item" style="font-size:20px;">Work With Us ▾</a>
 
     <div class="dropdown">
       <a href="/NCDC_MOHFW/includes/Work_With_Us/Vacancies.php">Vacancies</a>
@@ -938,15 +939,15 @@ function skipToContent(e){
   
   <!-- Academics -->
   <div class="nav-item" onclick="toggleDropdown(event)">
-    <a href="javascript:void(0)" class="nav-item">Academics ▾</a>
+    <a href="javascript:void(0)" class="nav-item" style="font-size:20px;">Academics ▾</a>
 
     <div class="dropdown">
       <a href="/NCDC_MOHFW/includes/Academics/teaching-training.php">Teaching & Training</a>
       <a href="/NCDC_MOHFW/includes/Academics/ongoing-thesis.php">Ongoing thesis</a>
     </div>
   </div>
-  <a href="/NCDC_MOHFW/includes/Tenders/index.php" class="nav-item">Tenders</a>
-  <a href="/NCDC_MOHFW/includes/SideBar/contactus.php" class="nav-item">Contact Us</a>
+  <a href="/NCDC_MOHFW/includes/Tenders/index.php" class="nav-item" style="font-size:20px;">Tenders</a>
+  <a href="/NCDC_MOHFW/includes/SideBar/contactus.php" class="nav-item" style="font-size:20px;">Contact Us</a>
   
 </nav>
 
