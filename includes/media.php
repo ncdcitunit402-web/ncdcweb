@@ -261,7 +261,7 @@ inline:'center'
 
 <h2>Media Gallery</h2>
 
-<a href="/NCDC_MOHFW/media-gallery.php" class="view-all-btn">
+<a href="/NCDC_MOHFW/includes/SideBar/media_gallary.php" class="view-all-btn">
 View All
 </a>
 
