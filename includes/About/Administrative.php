@@ -27,13 +27,13 @@ body{
   margin:auto;
 }
 
-/* ===== LAYOUT ===== */
+/* LAYOUT */
 .admin-layout{
   display:flex;
   gap:20px;
 }
 
-/* ===== LEFT SIDEBAR ===== */
+/* SIDEBAR */
 .admin-sidebar{
   width:260px;
   background:#fff;
@@ -58,12 +58,12 @@ body{
   color:#fff;
 }
 
-/* ===== CONTENT AREA ===== */
+/* CONTENT */
 .admin-content{
   flex:1;
 }
 
-/* ===== SECTION BOX ===== */
+/* SECTION */
 .section-box{
   display:none;
   background:#fff;
@@ -83,14 +83,19 @@ body{
   margin-bottom:16px;
 }
 
-/* ===== STAFF GRID ===== */
+/* DIRECTOR ROW */
+.director-row{
+  margin-bottom:20px;
+}
+
+/* STAFF GRID */
 .staff-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(2, 1fr);
   gap:16px;
 }
 
-/* ===== STAFF CARD ===== */
+/* STAFF CARD */
 .staff-card{
   background:#f9fbfd;
   border-radius:10px;
@@ -99,21 +104,31 @@ body{
   gap:12px;
   border:1px solid #e1e8f0;
 }
+
 .staff-card img{
   width:90px;
   height:110px;
   object-fit:cover;
   border-radius:8px;
 }
+
 .staff-info h4{
   margin:0 0 4px;
   font-size:16px;
 }
+
 .staff-info p{
   margin:2px 0;
   font-size:14px;
   color:#444;
 }
+
+/* DIRECTOR STYLE */
+.director-card{
+  border:1px solid #e1e8f0;
+  background:#f9fbfd;
+}
+
 .badge{
   display:inline-block;
   background:#e63946;
@@ -123,8 +138,31 @@ body{
   border-radius:6px;
   margin-bottom:4px;
 }
+.staff-divider{
+  margin:20px 0;
+  text-align:center;
+  position:relative;
+}
 
-/* ===== MOBILE ===== */
+.staff-divider::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:0;
+  width:100%;
+  height:1px;
+  background:#ccc;
+}
+
+.staff-divider span{
+  background:#fff;
+  padding:0 12px;
+  position:relative;
+  font-weight:600;
+  color:#555;
+}
+
+/* MOBILE */
 @media(max-width:768px){
   .admin-layout{
     flex-direction:column;
@@ -152,74 +190,131 @@ body{
 
 <div class="admin-layout">
 
-  <!-- ===== LEFT SIDEBAR ===== -->
-  <div class="admin-sidebar">
-    <ul>
-      <?php foreach($sectionList as $i=>$sec){ ?>
-        <li class="<?= $i==0?'active':'' ?>"
-            onclick="showSection('section<?= $sec['id']; ?>', this)">
-          <?= $sec['section_name']; ?>
-        </li>
-      <?php } ?>
-    </ul>
-  </div>
+<!-- SIDEBAR -->
+<div class="admin-sidebar">
+<ul>
+<?php foreach($sectionList as $i=>$sec){ ?>
+<li class="<?= $i==0?'active':'' ?>"
+onclick="showSection('section<?= $sec['id']; ?>', this)">
+<?= $sec['section_name']; ?>
+</li>
+<?php } ?>
+</ul>
+</div>
 
-  <!-- ===== RIGHT CONTENT ===== -->
-  <div class="admin-content">
+<!-- CONTENT -->
+<div class="admin-content">
 
-    <?php foreach($sectionList as $i=>$sec){ ?>
-    <div id="section<?= $sec['id']; ?>" class="section-box <?= $i==0?'active':'' ?>">
+<?php foreach($sectionList as $i=>$sec){ ?>
+<div id="section<?= $sec['id']; ?>" class="section-box <?= $i==0?'active':'' ?>">
 
-      <div class="section-title"><?= $sec['section_name']; ?></div>
+<div class="section-title"><?= $sec['section_name']; ?></div>
 
-      <div class="staff-grid">
-      <?php
-      $staff = mysqli_query($conn,"
-        SELECT * FROM administrative_staff
-        WHERE section_id='".$sec['id']."' AND status=1
-        ORDER BY is_director DESC, name ASC
-      ");
+<?php
+/* DIRECTOR */
+$director = mysqli_query($conn,"
+SELECT * FROM administrative_staff
+WHERE section_id='".$sec['id']."'
+AND status=1 AND is_director=1
+LIMIT 1
+");
 
-      if(mysqli_num_rows($staff)==0){
-        echo "<p>No staff available.</p>";
-      }
+if(mysqli_num_rows($director)>0){
+$row = mysqli_fetch_assoc($director);
+?>
 
-      while($row = mysqli_fetch_assoc($staff)){
-      ?>
-        <div class="staff-card">
-          <img src="/NCDC_MOHFW/uploads/administrative/<?= $row['photo']; ?>"
-               onerror="this.src='/NCDC_MOHFW/assets/no-photo.png';">
-          <div class="staff-info">
-            <?php if($row['is_director']){ ?>
-              <span class="badge">Director</span>
-            <?php } ?>
-            <h4><?= $row['name']; ?></h4>
-            <p><strong><?= $row['designation']; ?></strong></p>
-            <p><?= $row['qualification']; ?></p>
-            <p>📞 <?= $row['phone']; ?></p>
-            <p>✉️ <?= $row['email']; ?></p>
-          </div>
-        </div>
-      <?php } ?>
-      </div>
+<div class="director-row">
+<div class="staff-card director-card">
 
-    </div>
-    <?php } ?>
+<img src="/NCDC_MOHFW/uploads/administrative/<?= $row['photo']; ?>"
+onerror="this.src='/NCDC_MOHFW/assets/no-photo.png';">
 
-  </div>
+<div class="staff-info">
+
+<span class="badge">Director</span>
+
+<h4><?= $row['name']; ?></h4>
+
+<p><strong><?= $row['designation']; ?></strong></p>
+
+<p><?= $row['qualification']; ?></p>
+
+<p>📞 <?= $row['phone']; ?></p>
+
+<p>✉️ <?= $row['email']; ?></p>
+
+</div>
+</div>
+</div>
+
+<?php } ?>
+<div class="staff-divider">
+  <span>Other Staff</span>
+</div>
+<!-- OTHER STAFF -->
+<div class="staff-grid">
+
+<?php
+$staff = mysqli_query($conn,"
+SELECT * FROM administrative_staff
+WHERE section_id='".$sec['id']."'
+AND status=1 AND is_director=0
+ORDER BY name ASC
+");
+
+if(mysqli_num_rows($staff)==0){
+echo "<p>No staff available.</p>";
+}
+
+while($row = mysqli_fetch_assoc($staff)){
+?>
+
+<div class="staff-card">
+
+<img src="/NCDC_MOHFW/uploads/administrative/<?= $row['photo']; ?>"
+onerror="this.src='/NCDC_MOHFW/assets/no-photo.png';">
+
+<div class="staff-info">
+
+<h4><?= $row['name']; ?></h4>
+
+<p><strong><?= $row['designation']; ?></strong></p>
+
+<p><?= $row['qualification']; ?></p>
+
+<p>📞 <?= $row['phone']; ?></p>
+
+<p>✉️ <?= $row['email']; ?></p>
+
+</div>
+</div>
+
+<?php } ?>
+
+</div>
+
+</div>
+<?php } ?>
+
+</div>
+
 </div>
 </div>
 
 <script>
 function showSection(id, el){
-  document.querySelectorAll('.section-box').forEach(sec=>{
-    sec.classList.remove('active');
-  });
-  document.querySelectorAll('.admin-sidebar li').forEach(li=>{
-    li.classList.remove('active');
-  });
-  document.getElementById(id).classList.add('active');
-  el.classList.add('active');
+
+document.querySelectorAll('.section-box').forEach(sec=>{
+sec.classList.remove('active');
+});
+
+document.querySelectorAll('.admin-sidebar li').forEach(li=>{
+li.classList.remove('active');
+});
+
+document.getElementById(id).classList.add('active');
+el.classList.add('active');
+
 }
 </script>
 

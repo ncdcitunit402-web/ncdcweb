@@ -21,10 +21,14 @@ if (!isset($_SESSION['admin'])) {
 
 <!-- ===== AUTO LOGOUT JAVASCRIPT ===== -->
 <script>
-let logoutTime = 15 * 60 * 1000; // 15 minutes
+if(typeof logoutTime === "undefined"){
+
+var logoutTime = 15 * 60 * 1000;
 
 setTimeout(function(){
     alert("Session expired! Please login again.");
-    window.location.href = "/NCDC_MOHFW/admin/login.php";
+    window.location.href="/NCDC_MOHFW/admin/login.php";
 }, logoutTime);
+
+}
 </script>

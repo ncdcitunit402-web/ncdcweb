@@ -5,7 +5,7 @@ session_start();
    INCLUDE DATABASE CONNECTION
    =============================== */
 require_once __DIR__ . '/../config/db.php';
-include_once __DIR__.'/includes/header.php';
+// include_once __DIR__.'/includes/header.php';
 
 $error = "";
 

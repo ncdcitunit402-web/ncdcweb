@@ -160,33 +160,28 @@ html, body {
   overflow: hidden;
   width: 100%;
 }
-
-.programme-card {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background: #ffffff;
-  padding: 14px;
-  margin-bottom: 12px;
-  border-radius: 12px;
-  font-weight: 600;
-  color: #333;
-  text-decoration: none;
+.programme-card{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 10px;
+  background:#fff;
+  border-radius:6px;
+  margin-bottom:8px;
+  text-decoration:none;
+  color:#000;
+  font-size:17px;
+  font-weight:700;
+  font-family:"Times New Roman", Times, serif;
 }
 
-.programme-card::before {
-  content: "";
-  width: 36px;
-  height: 36px;
-  background: #e6efff;
-  border-radius: 50%;
-  margin-right: 12px;
-  flex-shrink: 0;
-}
-
-.programme-card:hover {
-  background: #0b5ed7;
-  color: #fff;
+.programme-logo{
+  width:40px;
+  height:40px;
+  border-radius:50%;      /* makes circle */
+  object-fit:cover;       /* image fit inside circle */
+  background:#d3dbe7;     /* light background */
+  padding:4px;
 }
 .pdf-icon{
   width:16px;
@@ -528,7 +523,7 @@ if ($res->num_rows > 0) {
 
     </div>
 
-    <!-- RIGHT PANEL (PROGRAMME LIST) -->
+<!-- RIGHT PANEL (PROGRAMME LIST) -->
 <div class="glimpse-right">
   <h2>National Health Programme</h2>
 
@@ -536,7 +531,7 @@ if ($res->num_rows > 0) {
     <?php
     $prog = mysqli_query(
         $conn,
-        "SELECT programme_name, page_slug
+        "SELECT programme_name, page_slug, logo
          FROM programmes 
          WHERE status = 'active' 
          ORDER BY programme_name ASC"
@@ -547,8 +542,16 @@ if ($res->num_rows > 0) {
 
             $link = '/NCDC_MOHFW/includes/About/CentresAndDivision/' . $row['page_slug'];
 
+            // Logo check
+            if (!empty($row['logo']) && file_exists($_SERVER['DOCUMENT_ROOT'].'/NCDC_MOHFW/uploads/logo/'.$row['logo'])) {
+                $logo = '/NCDC_MOHFW/uploads/logo/' . $row['logo'];
+            } else {
+                $logo = '/NCDC_MOHFW/uploads/logo/no-logo.png';
+            }
+
             echo '<a class="programme-card" href="' . htmlspecialchars($link) . '">
-                    ' . htmlspecialchars($row['programme_name']) . '
+                    <img src="' . htmlspecialchars($logo) . '" alt="' . htmlspecialchars($row['programme_name']) . '" class="programme-logo">
+                    <span>' . htmlspecialchars($row['programme_name']) . '</span>
                   </a>';
         }
     } else {
