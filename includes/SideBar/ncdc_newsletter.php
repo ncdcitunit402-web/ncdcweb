@@ -6,150 +6,171 @@
 <style>
 
 /* ===== HEADER IMAGE ===== */
+
 .header-image{
   width:100%;
-  height:260px;
+  height:300px;
   overflow:hidden;
 }
+
 .header-image img{
   width:100%;
   height:100%;
   object-fit:cover;
-  display:block;
 }
 
-/* ===== PAGE CONTENT ===== */
+/* ===== PAGE CONTAINER ===== */
+
 .page-container{
-  width:90%;
+  width:92%;
   max-width:1200px;
   margin:40px auto;
-  font-family: Arial, sans-serif;
-  line-height:1.6;
+  font-family:"Times New Roman", Times, serif;
+  line-height:1.7;
 }
 
-/* Breadcrumb */
+/* ===== BREADCRUMB ===== */
+
 .breadcrumb{
   font-size:14px;
-  margin-bottom:15px;
+  margin-bottom:20px;
   color:#666;
 }
+
 .breadcrumb a{
   text-decoration:none;
-  color:#0066cc;
+  color:#0b77b7;
+  font-weight:600;
 }
 
-/* Headings */
-h1{
-  font-size:28px;
-  color:#003366;
-  margin-bottom:20px;
-}
+/* ===== HEADINGS ===== */
+
 h2{
-  font-size:22px;
-  margin-top:40px;
-  color:#003366;
-  border-bottom:2px solid #ddd;
-  padding-bottom:5px;
+  font-size:30px;
+  color:#0b2e59;
+  margin-bottom:20px;
+  border-left:5px solid #0b77b7;
+  padding-left:10px;
 }
 
-/* ===== Responsive Table ===== */
+.section-title{
+  margin-top:50px;
+  font-size:22px;
+  font-weight:700;
+  color:#0b2e59;
+  border-bottom:3px solid #0b77b7;
+  padding-bottom:8px;
+}
+
+/* ===== TABLE ===== */
+
 .info-table{
   width:100%;
   border-collapse:collapse;
-  margin-top:20px;
-  overflow-x:auto;
-  display:block;
+  margin-top:25px;
+  background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
-.info-table th, .info-table td{
-  border:1px solid #ccc;
-  padding:10px;
+
+.info-table th{
+  background:#0b77b7;
+  color:white;
+  padding:12px;
+  width:30%;
   text-align:left;
 }
-.info-table th{
-  background:#f2f2f2;
-  width:30%;
+
+.info-table td{
+  padding:12px;
+  border-bottom:1px solid #eee;
 }
 
-/* Section Titles */
-.section-title{
-  margin-top:40px;
-  font-size:20px;
-  color:#003366;
-  border-bottom:1px solid #ccc;
-  padding-bottom:5px;
+.info-table tr:hover{
+  background:#f9fbff;
 }
 
-/* ===== Member Cards ===== */
+/* ===== GRID ===== */
+
+.editorial-grid{
+  display:grid;
+  grid-template-columns:1fr;   /* Ek row me ek hi card */
+  gap:20px;
+  margin-top:25px;
+}
+
+/* ===== MEMBER CARD ===== */
+
 .member-card{
-  border:1px solid #ddd;
-  padding:15px;
-  background:#fafafa;
-  border-radius:6px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.05);
-  transition:0.3s;
+  border-radius:8px;
+  padding:18px;
+  background:white;
+  border:1px solid #e3e3e3;
+  box-shadow:0 3px 10px rgba(0,0,0,0.06);
+  transition:all .3s ease;
 }
+
 .member-card:hover{
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transform:translateY(-4px);
+  box-shadow:0 6px 16px rgba(0,0,0,0.12);
 }
 
-/* Grid Layout for Desktop */
-@media (min-width:768px){
-  .editorial-grid{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:20px;
-  }
+.member-card strong{
+  color:#0b2e59;
 }
 
-@media (min-width:1100px){
-  .editorial-grid{
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* ===== NEWSLETTER LIST ===== */
+
+.newsletter-list{
+  margin-top:25px;
 }
 
-/* ===== Newsletter List ===== */
 .newsletter-list ul{
-  list-style-type: disc;
-  padding-left:20px;
+  list-style:none;
+  padding:0;
 }
+
 .newsletter-list li{
+  background:#ffffff;
+  border:1px solid #e6e6e6;
+  padding:14px 16px;
   margin-bottom:12px;
+  border-radius:6px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
+
+.newsletter-list li:hover{
+  background:#f5faff;
+  border-color:#0b77b7;
+}
+
 .newsletter-list a{
   text-decoration:none;
-  color:#003366;
+  color:#0b2e59;
+  font-weight:600;
 }
-.newsletter-list a:hover{
-  text-decoration:underline;
-}
+
 .pdf-icon{
-  width:18px;
-  vertical-align:middle;
-  margin-left:6px;
+  width:20px;
 }
 
-/* ===== Mobile Adjustments ===== */
-@media (max-width:768px){
+/* ===== MOBILE ===== */
 
-  .header-image{
-    height:180px;
-  }
+@media(max-width:768px){
 
-  h1{
-    font-size:22px;
-  }
+.header-image{
+height:180px;
+}
 
-  h2{
-    font-size:18px;
-  }
+h2{
+font-size:24px;
+}
 
-  .page-container{
-    margin:20px auto;
-  }
+.section-title{
+font-size:20px;
+}
 
-  .member-card{
-    margin-bottom:15px;
-  }
 }
 
 </style>
@@ -157,207 +178,291 @@ h2{
 
 <!-- HEADER IMAGE -->
 <div class="header-image">
-  <img src="/NCDC_MOHFW/uploads/header_image.png" 
-       alt="NCDC Newsletter Header">
+  <img src="/NCDC_MOHFW/uploads/header_image.png" alt="NCDC Newsletter">
 </div>
+
 
 <div class="page-container">
 
-  <div class="breadcrumb">
-    <a href="/NCDC_MOHFW/index.php">Home</a> › NCDC Newsletter
-  </div>
+<div class="breadcrumb">
+<a href="/NCDC_MOHFW/index.php">Home</a> › NCDC Newsletter
+</div>
 
-  <h1>About the NCDC Newsletter</h1>
 
-  <p>
-    Epidemiology division brings out a quarterly newsletter reflecting the key
-activities of NCDC in the past quarter. It has several interesting sections such
-as the lead story section, outbreak section, monitoring disease trends, NCDC
-news, etc. The lead story focuses on a current issue of topical interest.
-Several interesting emergency responses including outbreaks investigated and
-rapid assessments in disasters led by NCDC, new initiatives, coordination
-activities under any division, International Health Regulations are also
-covered. Communicable disease trends from various programme such as Integrated
-Disease Programme, National Vector Borne Disease Control Programme among others
-are featured in the monitoring disease trends section. The newsletter is widely
-circulated among the public health and medical fraternity. It is available
+<h2>About the NCDC Newsletter</h2>
+
+<p>
+Epidemiology division brings out a quarterly newsletter reflecting the key
+activities of NCDC in the past quarter including outbreak investigations,
+monitoring disease trends, emergency responses and public health initiatives.
+The newsletter is circulated among public health professionals and is available
 online on the NCDC website.
-  </p>
-
-  <!-- Newsletter Particulars -->
-  <h2>Newsletter Particulars</h2>
-
-  <table class="info-table">
-    <tr><th>Title</th><td>NCDC Newsletter</td></tr>
-    <tr><th>Frequency</th><td>Quarterly</td></tr>
-    <tr><th>Publisher</th><td>National Centre for Disease Control</td></tr>
-    <tr><th>Advisor</th><td>Prof. (Dr.) Atul Goel, DGHS & Director NCDC</td></tr>
-    <tr><th>Chief Editor</th><td>Dr. Anil Kumar, Principal Advisor</td></tr>
-    <tr><th>Copyright</th><td>NCDC</td></tr>
-    <tr><th>Starting Year</th><td>2012</td></tr>
-    <tr><th>Language</th><td>English</td></tr>
-    <tr><th>Publication Format</th><td>Online</td></tr>
-    <tr><th>Phone No.</th><td>011-23913148, 23922132</td></tr>
-    <tr><th>Email</th><td>ncdcnewsletter21[at]gmail[dot]com</td></tr>
-    <tr><th>Website</th><td>www.ncdc.mohfw.gov.in</td></tr>
-    <tr><th>Address</th><td>22, Shamnath Marg, Civil Lines, Delhi-110054</td></tr>
-  </table>
-
-  <!-- Editorial Board -->
-  <div class="section-title">Editorial Board</div>
-
-  <div class="member-card">
-    <strong>Advisor</strong><br>
-    <strong>Name:</strong> Prof. (Dr.) Atul Goel<br>
-    <strong>Designation:</strong> DGHS & Director, NCDC<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Mail:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
-  </div>
-
-  <div class="member-card">
-    <strong>Chief Editor</strong><br>
-    <strong>Name:</strong> Dr. Anil Kumar<br>
-    <strong>Designation:</strong> Principal Advisor, NCDC<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
-</div>
-
-  <div class="member-card">
-    <strong>Executive Editor</strong><br>
-    <strong>Name:</strong> Dr. Sandhya Kabra<br>
-    <strong>Designation:</strong> Additional Director & HoD, Hepatitis & Biotechnology<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
-</div>
+</p>
 
 
-  <div class="member-card">
-    <strong>Assistant Executive Editor</strong><br>
-    <strong>Name:</strong> Dr. Meera Dhuria<br>
-    <strong>Designation:</strong> Joint Director & DPHE & NCD Division<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
-</div>
+<!-- Newsletter Particulars -->
+
+<div class="section-title">Newsletter Particulars</div>
+
+<table class="info-table">
+
+<tr><th>Title</th><td>NCDC Newsletter</td></tr>
+<tr><th>Frequency</th><td>Quarterly</td></tr>
+<tr><th>Publisher</th><td>National Centre for Disease Control</td></tr>
+
+<tr>
+<th>Advisor</th>
+<td>
+Dr. Sunita Sharma, Director General of Health Services, NCDC<br><br>
+Prof (Dr.) Ranjan Das, Director, NCDC
+</td>
+</tr>
+
+<tr><th>Chief Executive Editor</th><td>Dr. Anil Kumar</td></tr>
+
+<tr><th>Phone No.</th><td>011-23913148, 23922132</td></tr>
+
+<tr><th>Email</th><td>ncdcnewsletter21[at]gmail[dot]com</td></tr>
+
+<tr><th>Address</th><td>22, Shamnath Marg, Civil Lines, Delhi-110054</td></tr>
+
+</table>
 
 
-  <div class="section-title">Editorial Panel</div>
+<!-- Editorial Board -->
 
-  <div class="member-card">
-    <strong>Name:</strong> Dr. Sunil Gupta<br>
-    <strong>Designation:</strong> Principal Consultant<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<div class="section-title">Editorial Board</div>
+
+<div class="editorial-grid">
+
+<div class="member-card">
+
+<strong>Advisors</strong><br><br>
+
+<strong>1. Dr. Sunita Sharma</strong><br>
+Designation: Director General of Health Services<br>
+Email: dirnicd[at]nic[dot]in<br>
+Address: 22 Shamnath Marg, Civil Lines, Delhi-110054
+
+<br><br>
+
+<strong>2. Prof (Dr.) Ranjan Das</strong><br>
+Designation: Director, NCDC<br>
+Email: dirnicd[at]nic[dot]in<br>
+Address: 22 Shamnath Marg, Civil Lines, Delhi-110054
+
 </div>
 
 <div class="member-card">
-    <strong>Name:</strong> Dr. S. K. Jain<br>
-    <strong>Designation:</strong> Advisor, Epidemiology Division<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Chief Executive Editor</strong><br><br>
+<strong>Name:</strong> Dr. Anil Kumar<br>
+<strong>Designation:</strong> Principal Advisor, NCDC<br>
+<strong>Email:</strong> ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Address:</strong> 22 Shamnath Marg, Civil Lines, Delhi-110054
 </div>
 
 <div class="member-card">
-    <strong>Name:</strong> Dr. Arti Bahl<br>
-    <strong>Designation:</strong> Additional Director & Head, Epidemiology Division<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Executive Editor</strong><br><br>
+<strong>Name:</strong> Dr. Meera Dhuria<br>
+<strong>Designation:</strong> Joint Director, NCDC<br>
+<strong>Email:</strong> ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Address:</strong> 22 Shamnath Marg, Civil Lines, Delhi-110054
 </div>
 
 <div class="member-card">
-    <strong>Name:</strong> Dr. Aakash Shrivastava<br>
-    <strong>Designation:</strong> Addl. Director & Head, Centre for Environmental & Occupational Health, Climate Change & Health<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Guest Editor</strong><br><br>
+<strong>Name:</strong> Dr. Aniket Chowdhury<br>
+<strong>Designation:</strong> Assistant Director, NCDC<br>
+<strong>Email:</strong> ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Address:</strong> 22 Shamnath Marg, Civil Lines, Delhi-110054
+</div>
+
+</div>
+
+
+<!-- Editorial Members -->
+
+<div class="section-title">Editorial Board Members</div>
+
+<div class="editorial-grid">
+
+<div class="member-card">
+<strong>Name:</strong> Dr. Aakash Srivastava<br>
+<strong>Designation:</strong> Additional Director & Head, CEOH-CCH Division, NCDC, Delhi<br>
+<strong>Address:</strong> National Centre for Disease Control, 22 Shamnath Marg, Civil Lines, Delhi-110054
 </div>
 
 <div class="member-card">
-    <strong>Name:</strong> Dr. Simrita Singh<br>
-    <strong>Designation:</strong> Additional Director & HoD, Centre for AIDS and Related Diseases<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Name:</strong> Dr. Arti Bahl<br>
+<strong>Designation:</strong> Additional Director & Head, Epidemiology<br>
+<strong>Address:</strong> National Centre for Disease Control, 22 Shamnath Marg, Civil Lines, Delhi-110054
 </div>
 
 <div class="member-card">
-    <strong>Name:</strong> Dr. Tanzin Dikid<br>
-    <strong>Designation:</strong> Joint Director, Epidemiology Division<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Name:</strong> Dr. Ashutosh Biswas<br>
+<strong>Designation:</strong> Director<br>
+<strong>Address:</strong>AIIMS Bhubaneswar, Odisha-751019
 </div>
 
 <div class="member-card">
-    <strong>Name:</strong> Dr. Himanshu Chauhan<br>
-    <strong>Designation:</strong> Joint Director & HOD, Integrated Disease Surveillance Programme<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Name:</strong> Dr. Mala Chhabra<br>
+<strong>Designation:</strong> Senior Consultant, Microbiology<br>
+<strong>Address:</strong> ABVIMS & Dr RML Hospital, New Delhi
 </div>
 
 <div class="member-card">
-    <strong>Name:</strong> Dr. Simmi Tiwari<br>
-    <strong>Designation:</strong> Joint Director & HOD, Centre for Medical Entomology and Vector Management<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Name:</strong>Dr. Manas Kundu<br>
+<strong>Designation:</strong>Director, All India Institute of Hygiene & Public Health<br>
+<strong>Address:</strong>Chittaranjan Avenue, Kolkata-700073
 </div>
 
 <div class="member-card">
-    <strong>Name:</strong> Dr. Vinay Garg<br>
-    <strong>Designation:</strong> Joint Director & Head, DPD<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Name:</strong>Dr. Manju Rahi<br>
+<strong>Designation:</strong>Director, ICMR-Vector Control Research Centre<br>
+<strong>Address:</strong>Indira Nagar, Puducherry - 605006
 </div>
 
 <div class="member-card">
-    <strong>Name:</strong> Dr. Monil Singhai<br>
-    <strong>Designation:</strong> Joint Director, CAZD<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Name:</strong>Dr. Naveen Gupta<br>
+<strong>Designation:</strong>Additional Director & Head, Microbiology-Respiratory & Teratogenic viruses and Cenre for One Health Division<br>
+<strong>Address:</strong>NCDC, Delhi
 </div>
 
 <div class="member-card">
-    <strong>Name:</strong> Dr. Purva Sarkate<br>
-    <strong>Designation:</strong> Joint Director & Head, Enterovirus Division<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<strong>Name:</strong>Dr. Rajesh Bhatia<br>
+<strong>Designation:</strong>Advisor, ADB (Former Director of Infection Diseases SEARO-WHO)<br>
 </div>
 
-<div class="section-title">Editorial Coordinator</div>
-  <div class="member-card">
-    <strong>Name:</strong> Dr. Suneet Kaur<br>
-    <strong>Designation:</strong> Deputy Director, Epidemiology Division<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<div class="member-card">
+<strong>Name:</strong>Dr. Ramesh Agarwal<br>
+<strong>Designation:</strong>Director Professor, Department of Medicine<br>
+<strong>Address:</strong>LHMC & Smt SK Hospital, New Delhi
 </div>
 
-<div class="section-title">Design and Layout</div>
-  <div class="member-card">
-    <strong>Name:</strong> Mr. Abhishek<br>
-    <strong>Designation:</strong> Technical Officer, Epidemiology Division<br>
-    <strong>Address:</strong> 22, Shamnath Marg, Civil Lines, Delhi-110054<br>
-    <strong>Email:</strong> dirnicd[at]nic[dot]in, ncdcnewsletter21[at]gmail[dot]com<br>
+<div class="member-card">
+<strong>Name:</strong>Dr. Ruchi Jain<br>
+<strong>Designation:</strong>Joint Director<br>
+<strong>Address:</strong>RHO office, Rajasthan
+</div>
+
+<div class="member-card">
+<strong>Name:</strong>Dr. S Venkatesh<br>
+<strong>Designation:</strong>Former DGHS & Director NCDC<br>
+</div>
+
+<div class="member-card">
+<strong>Name:</strong>Dr. Sandeep Garg<br>
+<strong>Designation:</strong>Director Professor, Department of Medicine<br>
+<strong>Address:</strong>LHMC & SK Hospital, New Delhi
+</div>
+
+<div class="member-card">
+<strong>Name:</strong>Dr. Simmi Tiwari<br>
+<strong>Designation:</strong>Joint Director & OIC, Centre for One Health<br>
+<strong>Address:</strong>NCDC, Delhi -  110054
+</div>
+
+<div class="member-card">
+<strong>Name:</strong>Dr. Tanu Jain<br>
+<strong>Designation:</strong><br>Director, National Center for Vector Borne Diseases Control<BR>
+<strong>Address:</strong>Ministry of Health and Family Welfare, Delhi -  110054
+</div>
+
+<div class="member-card">
+<strong>Name:</strong>Dr. Tanzin Dikid<br>
+<strong>Designation:</strong>Additioanl Director, National AIDS Control Organization (NACO)<br>
+<strong>Address:</strong>Janpath, New Delhi
+</div>
+
+<div class="member-card">
+<strong>Name:</strong>Dr. Tushar Nanasahed Nale<br>
+<strong>Designation:</strong>DADG<br>
+<strong>Address:</strong>DGHS, Nirman Bhawan , New Delhi
+</div>
+
+<div class="member-card">
+<strong>Publiser</strong><br><br>
+<strong>Name:</strong> Sh. Prakash Doval<br>
+<strong>Designation:</strong> Assistant Director(Admin), PBA<br>
+<strong>Address:</strong>NCDC, 22 Shamnath Marg, Civil Lines, Delhi-110054
+</div>
+
+<div class="member-card">
+<strong>Publising Body</strong><br><br>
+National Centre for Disease Control(NCDC)
+</div>
+
+<div class="member-card">
+<strong>Editorial Team</strong><br><br>
+<strong>Name:</strong>Dr. Ramesh Chandra<br>
+<strong>Designation:</strong> Joint Director<br>
+<strong>Address:</strong> NCDC, 22 Shamnath Marg, Civil Lines, Delhi-110054<br><br>
+
+<strong>Name:</strong>Dr. Ajit Shewale<br>
+<strong>Designation:</strong> Joint Director<br>
+<strong>Address:</strong> NCDC, 22 Shamnath Marg, Civil Lines, Delhi-110054<br><br>
+
+<strong>Name:</strong>Dr. Shubhangi D. Kulsange<br>
+<strong>Designation:</strong> Joint Director<br>
+<strong>Address:</strong> NCDC, 22 Shamnath Marg, Civil Lines, Delhi-110054<br><br>
+
+<strong>Name:</strong>Dr. Rameshwar Sorokhaibam<br>
+<strong>Designation:</strong>CMO (NFSG)<br>
+<strong>Address:</strong> NCDC, 22 Shamnath Marg, Civil Lines, Delhi-110054<br><br>
+
+<strong>Name:</strong>Dr. Shubha Garg<br>
+<strong>Designation:</strong> Joint Director<br>
+<strong>Address:</strong> NCDC, 22 Shamnath Marg, Civil Lines, Delhi-110054<br><br>
+</div>
+
+<div class="member-card">
+<strong>Journal Co-ordinators</strong><br><br>
+<strong>Name:</strong>Dr. Pritikumari Patel<br>
+<strong>Designation:</strong> Assistant Director<br>
+<strong>Address:</strong>NCDC, 22 Shamnath Marg, Civil Lines, Delhi-110054<br><br>
+
+<strong>Name:</strong>Dr. Purbasha Bera<br>
+<strong>Designation:</strong> Joint Director<br>
+<strong>Address:</strong>NCDC, 22 Shamnath Marg, Civil Lines, Delhi-110054
+</div>
+
+<div class="member-card">
+<strong>Design Support</strong><br><br>
+NCDC IT Unit & EIS IT Support
+</div>
 </div>
 
 
-  <!-- Newsletter Issues -->
-  
 <?php
-include("../../config/db.php"); // DB connection
-
+include("../../config/db.php");
 $newsQuery = mysqli_query($conn,"SELECT * FROM ncdc_newsletters WHERE status=1 ORDER BY id DESC");
 ?>
 
+
 <!-- Newsletter Issues -->
+
 <div class="section-title">Recent Newsletter Issues</div>
 
 <div class="newsletter-list">
-  <ul>
-    <?php while($row = mysqli_fetch_assoc($newsQuery)) { ?>
-      <li>
-        <a href="/NCDC_MOHFW/uploads/newsletter/<?php echo $row['pdf_file']; ?>" target="_blank">
-          <?php echo $row['title']; ?>
-        </a>
-        <img src="/NCDC_MOHFW/uploads/images/pdf-icon.png" class="pdf-icon" alt="PDF">
-      </li>
-    <?php } ?>
-  </ul>
+
+<ul>
+
+<?php while($row = mysqli_fetch_assoc($newsQuery)) { ?>
+
+<li>
+
+<a href="/NCDC_MOHFW/uploads/newsletter/<?php echo $row['pdf_file']; ?>" target="_blank">
+<?php echo $row['title']; ?>
+</a>
+
+<img src="/NCDC_MOHFW/uploads/images/pdf-icon.png" class="pdf-icon">
+
+</li>
+
+<?php } ?>
+
+</ul>
+
 </div>
 
 </div>

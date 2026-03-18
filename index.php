@@ -1,15 +1,27 @@
-<?php include 'config/db.php';?>
-<?php include 'includes/header.php'; ?>
+<?php
+// ================= ERROR REPORTING (FOR DEBUGGING) =================
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// ================= INCLUDE FILES =================
+include __DIR__ . '/config/db.php';
+include __DIR__ . '/includes/header.php';
+?>
 
 <div class="main-content">
 
-<?php include 'includes/slider.php'; ?>
-<?php include 'includes/announcement.php'; ?>
-<?php include 'includes/about.php'; ?>
-<?php include 'includes/glimpse-programme.php'; ?>
-<?php include 'includes/media.php'; ?>
-<?php include 'includes/scroll.php'; ?>
+<?php include __DIR__ . '/includes/slider.php'; ?>
+
+<?php include __DIR__ . '/includes/announcement.php'; ?>
+
+<?php include __DIR__ . '/includes/about.php'; ?>
+
+<?php include __DIR__ . '/includes/glimpse-programme.php'; ?>
+
+<?php include __DIR__ . '/includes/media.php'; ?>
+
+<?php include __DIR__ . '/includes/scroll.php'; ?>
 
 </div>
 
-<?php include 'includes/footer1.php'; ?>
+<?php include __DIR__ . '/includes/footer1.php'; ?>
